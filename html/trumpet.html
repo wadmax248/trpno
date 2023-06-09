@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trumpet</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <a href="./piano.html"><img src="../src/piano/piano.png" style="width:15%;left:10%;position:absolute;"></a>
+    <img class="trpno" src="../src/main/trpno.png">
+
+    <div class="tr">
+        <img id='v1' src="../src/trumpet/valve.png" style="width:16px;top:-15px;left:41%;position:absolute;">
+        <img id='v2' src="../src/trumpet/valve.png" style="width:16px;top:-15px;left:42.19%;position:absolute;">
+        <img id='v3' src="../src/trumpet/valve.png" style="width:16px;top:-15px;left:39.79%;position:absolute;">
+        <img src="../src/trumpet/body.png" style="width:500px;left:30%;position:absolute;">
+        <img id='head' src="../src/trumpet/head.png" style="width:100px;top:-34px;left:29%;position:absolute;">
+    </div>
+
+    <div class="tuto">
+        <p>F#2 ~ F4</p>
+        <p>Q 2 W 3 E R 5 T 6 Y 7 U</p>
+        <P>Z S X D C V G B H N J M</P>
+    </div>
+
+    <img class="bg" src="../src/main/bg.png" style="width:100%">
+
+    <script>
+
+        function trumpetPlay(s, k) {
+            s.currentTime = 0;
+            s.play();
+            image[0].classList.remove("moveHead");
+            k.classList.remove("moveValve");
+            k.offsetWidth = k.offsetWidth;
+            image[0].classList.add("moveHead");
+            k.classList.add("moveValve");
+            
+        }
+
+        const image = [document.getElementById('head'),document.getElementById('v1'),document.getElementById('v2'),document.getElementById('v3')];
+
+        const T_sound = [new Audio('../src/trumpet/Gb2.wav'),new Audio('../src/trumpet/G2.wav'),new Audio('../src/trumpet/Ab2.wav'),new Audio('../src/trumpet/A2.wav'),new Audio('../src/trumpet/Bb2.wav'),new Audio('../src/trumpet/B2.wav'),new Audio('../src/trumpet/C3.wav'),new Audio('../src/trumpet/Db3.wav'),new Audio('../src/trumpet/D3.wav'),new Audio('../src/trumpet/Eb3.wav'),new Audio('../src/trumpet/E3.wav'),new Audio('../src/trumpet/F3.wav'),new Audio('../src/trumpet/Gb3.wav'),new Audio('../src/trumpet/G3.wav'),new Audio('../src/trumpet/Ab3.wav'),new Audio('../src/trumpet/A3.wav'),new Audio('../src/trumpet/Bb3.wav'),new Audio('../src/trumpet/B3.wav'),new Audio('../src/trumpet/C4.wav'),new Audio('../src/trumpet/Db4.wav'),new Audio('../src/trumpet/D4.wav'),new Audio('../src/trumpet/Eb4.wav'),new Audio('../src/trumpet/E4.wav'),new Audio('../src/trumpet/F4.wav')];
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 90) {  trumpetPlay(T_sound[0],image[1]);  }
+            else if (e.keyCode == 83) {  trumpetPlay(T_sound[1],image[2]);}
+            else if (e.keyCode == 88) {  trumpetPlay(T_sound[2],image[3]);  }
+            else if (e.keyCode == 68) {  trumpetPlay(T_sound[3],image[3]);  }
+            else if (e.keyCode == 67) {  trumpetPlay(T_sound[4],image[2]);  }
+            else if (e.keyCode == 86) {  trumpetPlay(T_sound[5],image[1]);  }
+            else if (e.keyCode == 71) {  trumpetPlay(T_sound[6],image[1]);  }
+            else if (e.keyCode == 66) {  trumpetPlay(T_sound[7],image[2]);  }
+            else if (e.keyCode == 72) {  trumpetPlay(T_sound[8],image[3]);  }
+            else if (e.keyCode == 78) {  trumpetPlay(T_sound[9],image[3]);  }
+            else if (e.keyCode == 74) {  trumpetPlay(T_sound[10],image[2]);  }
+            else if (e.keyCode == 77) {  trumpetPlay(T_sound[11],image[1]);  }
+            else if (e.keyCode == 81) {  trumpetPlay(T_sound[12],image[1]);  }
+            else if (e.keyCode == 50) {  trumpetPlay(T_sound[13],image[2]);  }
+            else if (e.keyCode == 87) {  trumpetPlay(T_sound[14],image[3]);  }
+            else if (e.keyCode == 51) {  trumpetPlay(T_sound[15],image[3]);  }
+            else if (e.keyCode == 69) {  trumpetPlay(T_sound[16],image[2]);  }
+            else if (e.keyCode == 82) {  trumpetPlay(T_sound[17],image[1]);  }
+            else if (e.keyCode == 53) {  trumpetPlay(T_sound[18],image[1]);  }
+            else if (e.keyCode == 84) {  trumpetPlay(T_sound[19],image[2]);  }
+            else if (e.keyCode == 54) {  trumpetPlay(T_sound[20],image[3]);  }
+            else if (e.keyCode == 89) {  trumpetPlay(T_sound[21],image[3]);  }
+            else if (e.keyCode == 55) {  trumpetPlay(T_sound[22],image[2]);  }
+            else if (e.keyCode == 85) {  trumpetPlay(T_sound[23],image[1]);  }
+        });
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

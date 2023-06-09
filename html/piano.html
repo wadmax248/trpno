@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <a href="./trumpet.html"><img src="../src/trumpet/trumpet.png" style="width:15%;left:10%;position:absolute;"></a>
+    <img class="trpno" src="../src/main/trpno.png">
+    <div class="inst"> <!-- 건반 -->
+        <img src="../src/piano/whitekey1.png" id="P_do" class="whiteKey" style="left:34%;" onclick="pianoPlay(P_sound[0])">
+        <img src="../src/piano/blackkey1.png" id="P_dos" class="blackKey" style="left:36.75%;" onclick="pianoPlay(P_sound[1])">
+        <img src="../src/piano/whitekey2.png" id="P_re" class="whiteKey" style="left:39%;" onclick="pianoPlay(P_sound[2])">
+        <img src="../src/piano/blackkey2.png" id="P_res" class="blackKey" style="left:41.75%;" onclick="pianoPlay(P_sound[3])">
+        <img src="../src/piano/whitekey1.png" id="P_mi" class="whiteKey" style="left:44%;" onclick="pianoPlay(P_sound[4])">
+        <img src="../src/piano/whitekey2.png" id="P_fa" class="whiteKey" style="left:49%;" onclick="pianoPlay(P_sound[5])">
+        <img src="../src/piano/blackkey3.png" id="P_fas" class="blackKey" style="left:51.75%;" onclick="pianoPlay(P_sound[6])">
+        <img src="../src/piano/whitekey1.png" id="P_sol" class="whiteKey" style="left:54%;" onclick="pianoPlay(P_sound[7])">
+        <img src="../src/piano/blackkey4.png" id="P_sols" class="blackKey" style="left:56.75%;" onclick="pianoPlay(P_sound[8])">
+        <img src="../src/piano/whitekey2.png" id="P_ra" class="whiteKey" style="left:59%;" onclick="pianoPlay(P_sound[9])">
+        <img src="../src/piano/blackkey5.png" id="P_ras" class="blackKey" style="left:61.75%;" onclick="pianoPlay(P_sound[10])">
+        <img src="../src/piano/whitekey1.png" id="P_si" class="whiteKey" style="left:64%;" onclick="pianoPlay(P_sound[11])">
+    </div>
+    
+    <div class="tuto">
+        <p>C4 ~ B5</p>
+        <p>Q 2 W 3 E R 5 T 6 Y 7 U</p>
+        <P>Z S X D C V G B H N J M</P>
+    </div>
+    <img class="bg" src="../src/main/bg.png" style="width:100%">
+    
+    <script>
+        
+        function pianoPlay(s, k) {
+            s.currentTime = 0;
+            s.play();
+            k.classList.remove("moveKey");
+            k.offsetWidth = k.offsetWidth;
+            k.classList.add("moveKey");
+        }
+
+        //오디오 배열
+        const P_sound = [ new Audio('../src/piano/C4.mp3'), new Audio('../src/piano/Db4.mp3'), new Audio('../src/piano/D4.mp3'), new Audio('../src/piano/Eb4.mp3'), new Audio('../src/piano/E4.mp3'), new Audio('../src/piano/F4.mp3'), new Audio('../src/piano/Gb4.mp3'), new Audio('../src/piano/G4.mp3'), new Audio('../src/piano/Ab4.mp3'), new Audio('../src/piano/A4.mp3'), new Audio('../src/piano/Bb4.mp3'), new Audio('../src/piano/B4.mp3'), new Audio('../src/piano/C5.mp3'), new Audio('../src/piano/Db5.mp3'), new Audio('../src/piano/D5.mp3'), new Audio('../src/piano/Eb5.mp3'), new Audio('../src/piano/E5.mp3'), new Audio('../src/piano/F5.mp3'), new Audio('../src/piano/Gb5.mp3'), new Audio('../src/piano/G5.mp3'), new Audio('../src/piano/Ab5.mp3'), new Audio('../src/piano/A5.mp3'), new Audio('../src/piano/Bb5.mp3'), new Audio('../src/piano/B5.mp3')];
+        
+        //건반 이미지 배열
+        const P_key = [ document.getElementById("P_do"),document.getElementById("P_dos"),document.getElementById("P_re"),document.getElementById("P_res"),document.getElementById("P_mi"),document.getElementById("P_fa"),document.getElementById("P_fas"),document.getElementById("P_sol"),document.getElementById("P_sols"),document.getElementById("P_ra"),document.getElementById("P_ras"),document.getElementById("P_si")];
+        
+        
+        //키 입력
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 90) {  pianoPlay(P_sound[0],P_key[0]);  }
+            else if (e.keyCode == 83) {  pianoPlay(P_sound[1],P_key[1]);}
+            else if (e.keyCode == 88) {  pianoPlay(P_sound[2],P_key[2]);  }
+            else if (e.keyCode == 68) {  pianoPlay(P_sound[3],P_key[3]);  }
+            else if (e.keyCode == 67) {  pianoPlay(P_sound[4],P_key[4]);  }
+            else if (e.keyCode == 86) {  pianoPlay(P_sound[5],P_key[5]);  }
+            else if (e.keyCode == 71) {  pianoPlay(P_sound[6],P_key[6]);  }
+            else if (e.keyCode == 66) {  pianoPlay(P_sound[7],P_key[7]);  }
+            else if (e.keyCode == 72) {  pianoPlay(P_sound[8],P_key[8]);  }
+            else if (e.keyCode == 78) {  pianoPlay(P_sound[9],P_key[9]);  }
+            else if (e.keyCode == 74) {  pianoPlay(P_sound[10],P_key[10]);  }
+            else if (e.keyCode == 77) {  pianoPlay(P_sound[11],P_key[11]);  }
+            else if (e.keyCode == 81) {  pianoPlay(P_sound[12],P_key[0]);  }
+            else if (e.keyCode == 50) {  pianoPlay(P_sound[13],P_key[1]);  }
+            else if (e.keyCode == 87) {  pianoPlay(P_sound[14],P_key[2]);  }
+            else if (e.keyCode == 51) {  pianoPlay(P_sound[15],P_key[3]);  }
+            else if (e.keyCode == 69) {  pianoPlay(P_sound[16],P_key[4]);  }
+            else if (e.keyCode == 82) {  pianoPlay(P_sound[17],P_key[5]);  }
+            else if (e.keyCode == 53) {  pianoPlay(P_sound[18],P_key[6]);  }
+            else if (e.keyCode == 84) {  pianoPlay(P_sound[19],P_key[7]);  }
+            else if (e.keyCode == 54) {  pianoPlay(P_sound[20],P_key[8]);  }
+            else if (e.keyCode == 89) {  pianoPlay(P_sound[21],P_key[9]);  }
+            else if (e.keyCode == 55) {  pianoPlay(P_sound[22],P_key[10]);  }
+            else if (e.keyCode == 85) {  pianoPlay(P_sound[23],P_key[11]);  }
+        });
+
+    </script>
+    
+</body>
+</html>
