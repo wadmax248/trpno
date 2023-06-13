@@ -26,6 +26,8 @@
         <img src="../src/piano/whitekey1.png" id="P_si" class="whiteKey" style="left:64%;" onclick="pianoPlay(P_sound[11])">
     </div>
     
+    <p id="asdf/p>
+    
     <div class="tuto">
         <p>C4 ~ B5</p>
         <p>Q 2 W 3 E R 5 T 6 Y 7 U</p>
@@ -36,6 +38,7 @@
     <script>
         
         function pianoPlay(s, k) {
+            document.getElementById("tlqkf").innerHTML="qwer";
             s.currentTime = 0;
             s.play();
             k.classList.remove("moveKey");
